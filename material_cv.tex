@@ -1,0 +1,72 @@
+\documentclass[a4paper]{materialcv} % a4paper for A4
+
+% Color used for name, headings and certain diagram elements
+% Pick one of the colours below. Beware that some work better than others.
+% red500, teal500, yellow500, green500, orange500, indigo500, cyan500, purple500, lime500,
+% deeppurple500, blue500, amber500, pink500, deeporange500, brown500, grey500, lightblue500,
+% bluegrey500
+\def\hlcolor{lightblue500}
+
+% Command for printing skill bubbles. Central bubble first.
+\newcommand\skills{
+	\smartdiagram[bubble diagram]{
+		\textbf{Mathematics},
+		\textbf{Logic},
+		\textbf{Computer}\\\textbf{Science},
+		\textbf{Cryptanalysis},
+		\textbf{Theoretical}\\\textbf{Biology}
+	}
+}
+
+% Command for printing interest bars
+% Usage: \interests{{<name1>/<value1>}, …}
+% Valid values: 0.0 – 6.0
+\interests{{Biology/3}, {Codebreaking/5}, {Theoretical Computer Science/6}}
+
+% Usage: \languages{{<value1>/<colour1>/<label1>}, …}
+\languages{{5/indigo500/Turing}, {1/red500/C++}, {3/deeporange500/Modula}}
+
+\begin{document}
+% All profile commands have to be used, but can be defined empty in order to be left out
+\cvportrait{portrait}
+%\cvportrait{}
+\cvname{Alan M. Turing}
+\cvjobtitle{Mathematician,\newline Computer Scientist}
+\cvlinkedin{https://linkedin.com/in/alanturing}
+\cvxing{https://www.xing.com/profile/amturing}
+\cvnumberphone{+44 (0)1223 331100}
+\cvwebsite{http://www.kings.cam.ac.uk/}
+\cvaddress{Hollymeade, Wilmslow, Cheshire}
+\cvemail{alan@turing.co.uk}
+
+\begin{cvsection}{Education}
+	% \cvitem{<dates>}{<title>}{<organization>}{<location>}{<description>}
+	\cvitem%
+		{1936 -- 1938}%
+		{PhD, Mathematics}%
+		{\href{http://princeton.edu/}{Princeton University}}%
+		{Princeton, New Jersey, USA}%
+		{Dissertation: Systems of Logic Based on Ordinals}\\
+	\cvitem%
+		{1931 -- 1934}%
+		{MSc, Mathematics}%
+		{\href{http://www.kings.cam.ac.uk/}{King's College}}%
+		{Cambridge, UK}%
+		{Dissertation: Proving the Central Limit Theorem}
+	\end{cvsection}
+
+	\begin{cvsection}{Scientific Work}
+		\cvitem{1936}{On Computable Numbers, with an Application to the \emph{Entscheidungsproblem}}{}{}{On the limits of proof and computation. Replacing G\"odel's universal arithemtic-based formal language with a simple hypotheical devices, known as Turing machines.}
+	\end{cvsection}
+
+	\begin{cvsection}{Professional Experience}
+		\cvitem
+			{Sep 1939 -- Sep 1945}%
+			{Codebraker}%
+			{GC\&CS}%
+			{Bletchley Park, UK}%
+			{Developing Bombe, a machine for decyphering Enigma-enciphered messages}
+	\end{cvsection}
+
+	\makeprofile
+\end{document}
