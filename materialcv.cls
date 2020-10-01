@@ -1,4 +1,4 @@
-\ProvidesClass{materialcv}[2017/04/02 CV class]
+\ProvidesClass{materialcv}[2020/10/01 CV class]
 \LoadClass{article}
 \NeedsTeXFormat{LaTeX2e}
 
@@ -9,13 +9,12 @@
 \RequirePackage{tikz}
 \usetikzlibrary{shadows.blur}
 \RequirePackage[absolute, overlay]{textpos}
-\RequirePackage[top=.25cm, bottom=.25cm, left=6.75cm, right=.25cm, nohead, nofoot]{geometry}
+\RequirePackage[margin=.25cm, nohead, nofoot]{geometry}
 \RequirePackage{array}
 \RequirePackage{ifthen}
-\RequirePackage{graphicx}
 \RequirePackage[breakable]{tcolorbox}
 \tcbuselibrary{skins}
-\RequirePackage{multirow}
+\RequirePackage{smartdiagram}
 
 % Fonts
 \setmainfont{Roboto}
@@ -55,7 +54,6 @@
 
 \pagecolor{grey400}
 
-\RequirePackage{smartdiagram}
 % Thanks to https://www.reddit.com/user/TransientEmber who contributed the code to automatically exclude the \hlcolor from the list of colors for the bubble diagram
 \ExplSyntaxOn
 \clist_clear_new:N \g__sd_colors_clist
@@ -102,8 +100,8 @@
 \newlength{\sidebarwidth}
 \setlength{\sidebarwidth}{.33\paperwidth}
 
-\setlength{\TPHorizModule}{1cm}
-\setlength{\TPVertModule}{1cm}
+\setlength{\TPHorizModule}{.1515\sidebarwidth}
+\setlength{\TPVertModule}{.1515\sidebarwidth}
 
 \newcommand{\profilesection}[1]{%
 	{\color{black!38}\hspace{-5mm}\parbox{\sidebarwidth}{\hrulefill}}
@@ -114,15 +112,15 @@
 
 % Environment to create section cards
 \newenvironment{cvsection}[1]{%
-		\def\arraystretch{1.75}%
-		\begin{tcolorbox}[arc=0pt, grow to left by=1cm, left=1.75cm, enhanced, colback=white, toprule=0mm, rightrule=0mm, bottomrule=0mm, drop fuzzy midday shadow]
-			{\Large\color{\hlcolor} #1}
+	\def\arraystretch{1.75}%
+	\begin{tcolorbox}[arc=0pt, left=\sidebarwidth+.25cm, enhanced, colback=white, toprule=0mm, rightrule=0mm, bottomrule=0mm, drop fuzzy midday shadow]
+		{\Large\color{\hlcolor} #1}
 
-			\vspace{.25cm}
-			\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
+		\vspace{.25cm}
+		\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
 }{%
-			\end{tabular*}
-		\end{tcolorbox}
+		\end{tabular*}
+	\end{tcolorbox}
 }
 
 \newcommand{\cvitem}[5]{%
